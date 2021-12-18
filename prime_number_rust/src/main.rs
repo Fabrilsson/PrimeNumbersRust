@@ -51,22 +51,18 @@ fn get_input() -> String {
 fn par_prime(vector: &Vec<i64>) {
     let result: Vec<_> = vector.par_iter().map(|e| par_is_prime(e)).collect();
 
-    //println!("Found {} primes", result.iter().count());
-
-    // for elem in result {
-    //     match elem {
-    //         Some(e) => print!("{:?}, ", e),
-    //         _ => ()
-    //     }
-    // }
+    for elem in result {
+        match elem {
+            Some(e) => print!("{:?}, ", e),
+            _ => ()
+        }
+    }
 }
 
 fn seq_prime(vector: &Vec<i64>) {
     let result: Vec<i64> = seq_is_prime(vector);
 
-    //println!("Found {} primes", result.iter().count());
-
-    // println!("Primes: {:?}", result);
+    println!("Primes: {:?}", result);
 }
 
 fn par_is_prime(e: &i64) -> Option<&i64>{
